@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
- --primary-inverse: #0A0A0A;   /* grey -  800*/
- --secondary: #5F5F5F;   /* grey - 600 */
- --secondary-active: #EDEDED;   /* grey - 200 */
- --primary: #ffffff;   /* grey -  100 */
- --primary-active: #F8F8F8;    /* grey - 75 */
+ --primary-inverse: #0A0A0A;
+ --secondary: #5F5F5F;
+ --secondary-active: #EDEDED;
+ --primary: #ffffff;
+ --primary-active: #F8F8F8;
  --bg-primary: #ffffff;
  --bg-primary-inverse: #0A0A0A;
  --bg-secondary: #F6F6F6;
@@ -13,6 +13,7 @@
  --text-secondary: #5F5F5F;
  --text-primary: #0A0A0A;
  --border-primary: #F0F0F0;
+ --icons-accent: #2683EB;
  --font-family-body: Montserrat;
 };
 

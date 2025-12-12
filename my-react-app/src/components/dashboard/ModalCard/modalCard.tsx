@@ -1,14 +1,17 @@
-import "./modalCard.scss"
-import leaf from "../../../images/svg/leaf.svg"
-import progress from "../../../images/svg/progress.svg"
-import videoBlank from "../../../images/videoBlank.png"
-import progressBarEmpty from "../../../images/svg/progressBarBlank.svg"
+import "./modalCard.scss";
+import leaf from "../../../images/svg/leaf.svg";
+import progress from "../../../images/svg/progress.svg";
+import videoBlank from "../../../images/videoBlank.png";
+import progressBarEmpty from "../../../images/svg/progressBarBlank.svg";
+import Button from "../../universalComponents/button/button";
+import targetColorful from "../../../images/svg/targetColorful.png";
 
 const ModalCard = () => {
-    const progressPercents = 36;
-    const currentModule = "Lesson 3 - Analyze Charts"
-    const progressBarPercent = 36/404;
-    return(
+    const currentLesson = 3;
+    const lessonNumber = 25;
+    const progressPercents = Math.round((currentLesson / lessonNumber) * 100);
+    const currentModule = "Lesson 3 - Analyze Charts";
+    return (
         <div className="modalCard">
             <div className="thisModule">
                 <div className="moduleInfo">
@@ -19,47 +22,69 @@ const ModalCard = () => {
                                 <div className="h5">Complete</div>
                             </div>
                             <div className="moduleBadge">
-                                <img src={leaf} alt=""/>
+                                <img src={leaf} alt="" />
                                 <div className="moduleBadgeName">Beginner</div>
                             </div>
                         </div>
                         <div className="currentModule">
-                            <div className="currentModuleText">Current Module:</div>
-                            <div className="currentModuleName">{currentModule}</div>
+                            <div className="currentModuleText">
+                                Current Module:
+                            </div>
+                            <div className="currentModuleName">
+                                {currentModule}
+                            </div>
                         </div>
                     </div>
                     <div className="moduleInfoVideo">
-                        <img alt="Modal video" src={videoBlank}/>
+                        <img alt="Modal video" src={videoBlank} />
                     </div>
                 </div>
                 <div className="progressBar">
                     <div className="progressBarText">
                         <div className="progressBarHeading">
-                            <img src={progress} alt=""/>
+                            <img src={progress} alt="" />
                             <div>Course progress</div>
                         </div>
                         <div className="coursesCount">
-                            9 of 25 lessons
+                            {currentLesson} of {lessonNumber} lessons
                         </div>
-                    </div> 
+                    </div>
                     <div className="progressBarGraph">
-                        <div className="progressBarAccent" ></div>
-                        <img src={progressBarEmpty} alt=""/>
-                    </div>       
+                        <img src={progressBarEmpty} alt="" />
+                        <div
+                            className="progressBarAccent"
+                            style={{ width: `${progressPercents}%` }}
+                        ></div>
+                    </div>
                 </div>
             </div>
             <div className="nextModule">
-                <div className="progressTask">
-                    <div className="progressTaskHeading">
-
+                <div className="Milestone">
+                    <div className="MilestoneIconContainer">
+                        <img src={targetColorful} alt="" />
                     </div>
-                    <div className="nextModuleButton">
-
+                    <div className="nextMilestone">
+                        <div className="MilestoneHeading">Next Milestone</div>
+                        <div className="MilestoneTask">
+                            Complete 5 lessons to unlock Practice Trading
+                        </div>
                     </div>
+                </div>
+                <div className="nextModuleButton">
+                    <Button
+                        type="Accent"
+                        style="Primary"
+                        size="medium"
+                        onClick={() => console.log("Go!")}
+                        showRightArrow
+                    >
+                        {" "}
+                        Continue modul
+                    </Button>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default ModalCard;
