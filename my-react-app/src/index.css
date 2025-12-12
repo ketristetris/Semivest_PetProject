@@ -1,10 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
- --Grey-800: #0A0A0A;
- --Grey-600: #5F5F5F;
+ --primary-inverse: #0A0A0A;
+ --secondary: #5F5F5F;
+ --secondary-active: #EDEDED;
+ --primary: #ffffff;
+ --primary-active: #F8F8F8;
+ --bg-primary: #ffffff;
+ --bg-primary-inverse: #0A0A0A;
+ --bg-secondary: #F6F6F6;
+ --bg-critical: #FF4747;
+ --text-secondary: #5F5F5F;
+ --text-primary: #0A0A0A;
+ --border-primary: #F0F0F0;
+ --icons-accent: #2683EB;
+ --font-family-body: Montserrat;
 };
 
 body{
-    color: var(--Grey-800);
+    color: white;
+}
+.viewportContainer{
+    display: flex;
+    min-height: 100vh;
+}
+.container{
+    padding: 20px 20px 20px 0px;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex: 1;
+}
+
+.bigCard{
+    padding: 20px;
+    height: 100%;
+    flex: 1;
+    box-sizing: border-box;
+    border-radius: 16px;
+    border: 1px solid var(--secondary-active);
+    background: var(--bg-secondary);
 }

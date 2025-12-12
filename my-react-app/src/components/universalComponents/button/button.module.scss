@@ -1,0 +1,142 @@
+// src/components/Button/Button.module.scss
+
+// Цвета — твои rgba
+$accent-primary-default: rgba(38, 131, 235, 1);
+$accent-primary-hover: rgba(32, 116, 211, 1);
+$accent-primary-pressed: rgba(11, 94, 187, 1);
+
+$accent-secondary-default: rgba(201, 226, 255, 1);
+$accent-secondary-hover: rgba(159, 204, 255, 1);
+$accent-secondary-pressed: rgba(115, 181, 255, 1);
+
+$neutral-primary-default: rgba(10, 10, 10, 1);
+$neutral-primary-hover: rgba(61, 61, 61, 1);
+$neutral-primary-pressed: rgba(30, 30, 30, 1);
+
+$neutral-secondary-default: rgba(246, 246, 246, 1);
+$neutral-secondary-hover: rgba(240, 240, 240, 1);
+$neutral-secondary-pressed: rgba(237, 237, 237, 1);
+
+$button-disabled-bg: rgba(237, 237, 237, 1);
+$border-radius: 8px;
+
+$height-small: 36px;
+$height-medium: 48px;
+$height-large: 60px;
+
+.button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border: none;
+  border-radius: $border-radius;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  box-sizing: border-box;
+  min-width: 120px;
+
+  &.small {
+    height: $height-small;
+    font-size: 14px;
+  }
+
+  &.medium {
+    height: $height-medium;
+  }
+
+  &.large {
+    height: $height-large;
+    font-size: 18px;
+  }
+
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  .arrow {
+    margin: 0 4px;
+    font-weight: bold;
+  }
+}
+
+
+
+
+.AccentPrimary {
+  background-color: $accent-primary-default;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background-color: $accent-primary-hover;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $accent-primary-pressed;
+  }
+
+  &:disabled {
+    background-color: $button-disabled-bg;
+    color: rgba(222, 222, 222, 1);
+  }
+}
+
+.AccentSecondary {
+  background-color: $accent-secondary-default;
+  color: $neutral-primary-default;
+
+  &:hover:not(:disabled) {
+    background-color: $accent-secondary-hover;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $accent-secondary-pressed;
+  }
+
+  &:disabled {
+    background-color: $button-disabled-bg;
+    color: rgba(222, 222, 222, 1);
+  }
+}
+
+.NeutralPrimary {
+  background-color: $neutral-primary-default;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background-color: $neutral-primary-hover;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $neutral-primary-pressed;
+  }
+
+  &:disabled {
+    background-color: $button-disabled-bg;
+    color: rgba(222, 222, 222, 1);
+  }
+}
+
+.NeutralSecondary {
+  background-color: $neutral-secondary-default;
+  color: $neutral-primary-default;
+
+  &:hover:not(:disabled) {
+    background-color: $neutral-secondary-hover;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $neutral-secondary-pressed;
+  }
+
+  &:disabled {
+    background-color: $button-disabled-bg;
+    color: rgba(222, 222, 222, 1);
+  }
+}
