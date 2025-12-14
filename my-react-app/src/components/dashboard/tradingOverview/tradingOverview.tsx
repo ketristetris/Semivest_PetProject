@@ -4,7 +4,6 @@ import {
     subMonths,
     startOfMonth,
     endOfMonth,
-    eachDayOfInterval,
     format,
     startOfWeek,
     endOfWeek,
@@ -18,15 +17,20 @@ import infoGray from "../../../images/svg/infoGray.svg";
 import carpetLeft from "../../../images/svg/Carpet_left.svg";
 import carpetRight from "../../../images/svg/Carpet_right.svg";
 
+import dots from "../../../images/svg/dots.svg";
+
 const TradingOverview = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
 
     const monthStart = startOfMonth(currentDate);
-    const monthEnd = endOfMonth(monthStart);
     const startDate = startOfWeek(monthStart, { weekStartsOn: 0 });
-    const endDate = endOfWeek(monthEnd, { weekStartsOn: 0 });
+    const monthEnd = endOfMonth(monthStart);
 
-    const days = eachDayOfInterval({ start: startDate, end: endDate });
+    const days = Array.from({ length: 42 }, (_, i) => {
+        const date = new Date(startDate);
+        date.setDate(startDate.getDate() + i);
+        return date;
+    });
 
     const prevMonth = () => setCurrentDate(subMonths(currentDate, 1));
     const nextMonth = () => setCurrentDate(addMonths(currentDate, 1));
@@ -64,10 +68,16 @@ const TradingOverview = () => {
                             <div key={item.id} className={styles.watchlistItem}>
                                 <div className={styles.stockIcon}>🔘</div>
                                 <div className={styles.stockInfo}>
-                                    <strong>{item.symbol}</strong>
-                                    <span>{item.signal}</span>
+                                    <div className={styles.strong}>
+                                        {item.symbol}
+                                    </div>
+                                    <div className={styles.span}>
+                                        {item.signal}
+                                    </div>
                                 </div>
-                                <button className={styles.moreBtn}>...</button>
+                                <button className={styles.moreBtn}>
+                                    <img src={dots} alt="" />
+                                </button>
                             </div>
                         ))}
                     </div>
@@ -112,7 +122,7 @@ const TradingOverview = () => {
                         <div className={styles.daysGrid}>
                             {days.map((day, index) => {
                                 const isCurrentMonth =
-                                    day.getMonth() === monthStart.getMonth();
+                                    day >= monthStart && day <= monthEnd;
                                 const isToday =
                                     format(day, "yyyy-MM-dd") ===
                                     format(new Date(), "yyyy-MM-dd");

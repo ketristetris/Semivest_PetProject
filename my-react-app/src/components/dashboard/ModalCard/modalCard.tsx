@@ -7,7 +7,7 @@ import Button from "../../universalComponents/button/button";
 import targetColorful from "../../../images/svg/targetColorful.png";
 
 const ModalCard = () => {
-    const currentLesson = 23;
+    const currentLesson = 10;
     const lessonNumber = 25;
     const progressPercents = Math.round((currentLesson / lessonNumber) * 100);
     const currentModule = "Lesson 3 - Analyze Charts";
