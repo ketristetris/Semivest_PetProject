@@ -5,6 +5,7 @@ import videoBlank from "../../../images/videoBlank.png";
 import progressBarEmpty from "../../../images/svg/progressBarBlank.svg";
 import Button from "../../universalComponents/button/button";
 import targetColorful from "../../../images/svg/targetColorful.png";
+import buttonIcon from "../../../images/svg/play.svg";
 
 const ModalCard = () => {
     const currentLesson = 3;
@@ -76,9 +77,8 @@ const ModalCard = () => {
                         style="Primary"
                         size="medium"
                         onClick={() => console.log("Go!")}
-                        showRightArrow
                     >
-                        {" "}
+                        <img src={buttonIcon} alt=""/>
                         Continue modul
                     </Button>
                 </div>

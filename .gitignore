@@ -1,20 +1,9 @@
-``
-# Dependencies
-node_modules/
+```
+# Build artifacts
+build/
 
 # Environment
-.env
 .env.local
-*.env.*
 
-# Logs
-*.log
-
-# Build artifacts
-dist/
-build/
-target/
-
-# Package manager
-package-lock.json
-```
+# Editors
+.vscode/

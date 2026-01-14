@@ -21,9 +21,11 @@ import Button from "../../universalComponents/button/button";
 
 import stockIcon from "../../../images/stock/blank.svg"
 
+import Plus from "../../../images/svg/button_plus.svg"
+
 const TradingOverview = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
-
+    const [activeDate, setActiveDate] = useState<Date>(new Date()); 
     const monthStart = startOfMonth(currentDate);
     const startDate = startOfWeek(monthStart, { weekStartsOn: 0 });
     const monthEnd = endOfMonth(monthStart);
@@ -89,6 +91,7 @@ const TradingOverview = () => {
                     onClick={() => console.log("Go!")}
                 >
                     Add Stocks
+                    <img src={Plus} alt="" />
                 </Button>
             </div>
             <div className={styles.right}>
@@ -130,6 +133,8 @@ const TradingOverview = () => {
                                 const isToday =
                                     format(day, "yyyy-MM-dd") ===
                                     format(new Date(), "yyyy-MM-dd");
+                                const isActive = 
+                                    format(day, "yyyy-MM-dd") === format(activeDate, "yyyy-MM-dd");
                                 const dayNumber = format(day, "d");
 
                                 return (
@@ -139,7 +144,8 @@ const TradingOverview = () => {
                                             !isCurrentMonth
                                                 ? styles.outside
                                                 : ""
-                                        } ${isToday ? styles.today : ""}`}
+                                        } ${isToday ? styles.today : ""} ${isActive ? styles.isActive : ""}`}
+                                        onClick={() => isCurrentMonth && setActiveDate(day)}
                                     >
                                         {dayNumber}
                                     </div>

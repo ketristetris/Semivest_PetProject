@@ -159,6 +159,7 @@
                     font-style: normal;
                     font-weight: 400;
                     line-height: 16px;
+                    cursor: pointer;
                     &:hover {
                         background: var(--bg-secondary-hover);
                     }
@@ -167,9 +168,10 @@
                         color: var(--text-disable);
                     }
 
-                    &.today {
+                    &.isActive {
                         background: var(--bg-accent);
                         color: var(--text-primary-inverse);
+                        cursor: default;
                     }
                 }
             }

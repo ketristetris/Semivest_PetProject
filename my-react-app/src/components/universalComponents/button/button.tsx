@@ -13,8 +13,6 @@ interface ButtonProps {
   size?: ButtonSize;
   state?: ButtonState;
   children: React.ReactNode;
-  showLeftArrow?: boolean;
-  showRightArrow?: boolean;
   onClick?: () => void;
   className?: string;
 }
@@ -25,8 +23,6 @@ const Button: React.FC<ButtonProps> = ({
   size = 'medium',
   state = 'Default',
   children,
-  showLeftArrow = false,
-  showRightArrow = false,
   onClick,
   className = '',
 }) => {
@@ -44,9 +40,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={state === 'Disabled'}
       aria-disabled={state === 'Disabled'}
     >
-      {showLeftArrow && <span className={styles.arrow}>←</span>}
       {children}
-      {showRightArrow && <span className={styles.arrow}>→</span>}
     </button>
   );
 };
