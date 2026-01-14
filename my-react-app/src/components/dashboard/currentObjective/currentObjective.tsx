@@ -8,4 +8,4 @@ const CurrentObjective = () => {
     )
 }
 
-export default currentObjective;
+export default CurrentObjective;

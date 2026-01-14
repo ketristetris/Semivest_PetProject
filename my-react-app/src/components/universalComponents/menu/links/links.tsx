@@ -1,5 +1,5 @@
 import React from 'react';
-import { MENU_LINKS, IMAGES } from "../../../data";
+import { MENU_LINKS} from "../../../data";
 
 interface LinkProps {
     logo: string;
